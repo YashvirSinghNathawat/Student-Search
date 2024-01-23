@@ -43,7 +43,7 @@ Currently, two official plugins are available:
     Description: Fetch all data<br>
     Request Type : GET
 3. Endpoint: http://localhost:3000/:wing
-    Description:  It is used to fetch data from a wing.<br>
+    Description:  It is used to fetch data from a wing (:wing like A or B or C in <strong>Capital Letters</strong> without string brackets '').<br>
     Request Type : GET<br>
     Params Required: Wing<br>
     Returns: For each hall it returns student of :wing in format {'Hall' : {'Room No' : [Student Detail]}}
