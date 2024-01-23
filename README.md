@@ -20,26 +20,30 @@ Currently, two official plugins are available:
     }
 
 # Steps to run :
-## Run /backend
+## Run /backend in one Terminal
 1. cd /backend
 2. npm install
 3. node index.js
 
-## Run FrontEnd to fetch data
-1. npm install
-2. npm run dev
-
 ## Copy authentication token from PClub Student Search Website
 ![Screenshot](token.PNG)
-1. Copy token in /src/App.jsx in variable named 'token'
-2. Open website http://localhost:5173/
+1. Copy token from website in /src/App.jsx in variable named 'token'
+
+## Run FrontEnd to fetch data in another Terminal
+1. npm install
+2. npm run dev
+3. Open website http://localhost:5173/
+4. Open console of Browser It takes some time to fetch data: Refresh it if not received <strong>(May take 1-2 min)</strong>
+![Screenshot](tokenSuccessfull.PNG)
 
 ## To test api in Postman
 1. Note : /studentSearch endpoint will directly fetch data from PClub Student Search<br>
             Also fetch data is stored in 'data.json' in backend directory
-2. Endpoint: / is Get Api to fetch all data<br>
+2. Endpoint: http://localhost:3000/
+    Description: Fetch all data<br>
     Request Type : GET
-3. Endpoint: /:wing is used to fetch data from a wing.<br>
+3. Endpoint: http://localhost:3000/:wing
+    Description:  It is used to fetch data from a wing.<br>
     Request Type : GET<br>
     Params Required: Wing<br>
     Returns: For each hall it returns student of :wing in format {'Hall' : {'Room No' : [Student Detail]}}
@@ -50,3 +54,4 @@ Currently, two official plugins are available:
                    "studentOne" : "231110052",<br>
                     "studentTwo": "231110015"<br>
                 }<br>
+    Returns : <strong>Wingies</strong> if both student are of same wing other <strong>Not Wingies</strong>

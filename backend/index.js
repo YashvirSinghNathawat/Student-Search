@@ -19,7 +19,7 @@ const storeDataHandler = async (data)=>{
 // /studentSearch will fetch all data from FrontEnd
 app.post('/studentSearch', async (req,res)=>{
     const data = req.body;
-    if(data.data === undefined){
+    if(data.data !== undefined){
         const studentDetails = Array.from(data.data.documents);
         //Extract Y23 data
         const requiredData = studentDetails.filter((data)=>{
@@ -52,7 +52,7 @@ app.post('/studentSearch', async (req,res)=>{
         res.send({"message":"Data Saved Successfully"});
     }
     else{
-        res.status(404).json({ message : "Data Not Received"});
+        res.status(404).json({ message : "Data Not Received! Please Check Token"});
     }
 });
 
