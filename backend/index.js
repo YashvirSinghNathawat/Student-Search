@@ -19,7 +19,7 @@ const storeDataHandler = async (data)=>{
 // /studentSearch will fetch all data from FrontEnd
 app.post('/studentSearch', async (req,res)=>{
     const data = req.body;
-    if(data.data){
+    if(data.data === undefined){
         const studentDetails = Array.from(data.data.documents);
         //Extract Y23 data
         const requiredData = studentDetails.filter((data)=>{

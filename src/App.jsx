@@ -39,7 +39,7 @@ function App() {
   },[]);
   return (
     <>
-      hELLO
+      Front End Only to get Fetch data from PClub Student Search to website!!
     </>
   )
 }

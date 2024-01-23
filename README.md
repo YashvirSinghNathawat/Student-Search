@@ -29,23 +29,24 @@ Currently, two official plugins are available:
 1. npm install
 2. npm run dev
 
-## Copy authentication token from pclub website 
+## Copy authentication token from PClub Student Search Website
+![Screenshot](token.PNG)
 1. Copy token in /src/App.jsx in variable named 'token'
 2. Open website http://localhost:5173/
 
 ## To test api in Postman
-1. Note : /studentSearch endpoint will directly fetch data from PClub Student Search
+1. Note : /studentSearch endpoint will directly fetch data from PClub Student Search<br>
             Also fetch data is stored in 'data.json' in backend directory
-2. Endpoint: / is Get Api to fetch all data
+2. Endpoint: / is Get Api to fetch all data<br>
     Request Type : GET
-3. Endpoint: /:wing is used to fetch data from a wing.
-    Request Type : GET
-    Params Required: Wing
+3. Endpoint: /:wing is used to fetch data from a wing.<br>
+    Request Type : GET<br>
+    Params Required: Wing<br>
     Returns: For each hall it returns student of :wing in format {'Hall' : {'Room No' : [Student Detail]}}
-4. Endpoint: /WingiesOrNot It returns whether two people are of same wing or not
-    Request Type : POST
-    Body Required: studentOne and studentTwo which are id's of two student
-                Example: {
-                    "studentOne" : "231110052",
-                    "studentTwo": "231110015"
-                }
+4. Endpoint: /WingiesOrNot It returns whether two people are of same wing or not<br>
+    Request Type : POST<br>
+    Body Required: studentOne and studentTwo which are id's of two student<br>
+                Example: {<br>
+                   "studentOne" : "231110052",<br>
+                    "studentTwo": "231110015"<br>
+                }<br>
