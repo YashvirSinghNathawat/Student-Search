@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsImJhYXNfZG9tYWluX2lkIjoiNjQwYTkzMjk5ZTc1Mzg0OWNmM2JmNzIyIiwiZXhwIjoxNzA2MDE3NjM1LCJpYXQiOjE3MDYwMTU4MzUsImlzcyI6IjY1YWZiYzViMjMzZTEyNjc5MTVkZTI0YSIsInN0aXRjaF9kZXZJZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInN0aXRjaF9kb21haW5JZCI6IjY0MGE5MzI5OWU3NTM4NDljZjNiZjcyMiIsInN1YiI6IjY0MGIyMDhjMzYwOGQxNWU1OGRmMDU5MSIsInR5cCI6ImFjY2VzcyJ9.SkUH2B9-j2Fx0QQLYGISEeEqouL9TLXy-O232TThbn4';
 function App() {
   const url = 'https://ap-south-1.aws.data.mongodb-api.com/app/data-yubip/endpoint/data/v1/action/find';
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYWFzX2RldmljZV9pZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsImJhYXNfZG9tYWluX2lkIjoiNjQwYTkzMjk5ZTc1Mzg0OWNmM2JmNzIyIiwiZXhwIjoxNzA1ODY0MTYwLCJpYXQiOjE3MDU4NjIzNjAsImlzcyI6IjY1YWQ2NGQ4ZGNkMzY0Y2FmMjdjY2VlOCIsInN0aXRjaF9kZXZJZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInN0aXRjaF9kb21haW5JZCI6IjY0MGE5MzI5OWU3NTM4NDljZjNiZjcyMiIsInN1YiI6IjY0MGIyMDhjMzYwOGQxNWU1OGRmMDU5MSIsInR5cCI6ImFjY2VzcyJ9.ll8OgYA-XNYGyh47fEyU8Mq4u5xyTh-bcOYUHXXQmSs'
+    'Authorization': 'Bearer ' + token
   };
   const body = {
     dataSource: 'Cluster0',

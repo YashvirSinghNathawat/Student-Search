@@ -16,13 +16,10 @@ const storeDataHandler = async (data)=>{
     });
 }
 
-const retrieveDataHandler = (data)=>{
-
-}
-
+// /studentSearch will fetch all data from FrontEnd
 app.post('/studentSearch', async (req,res)=>{
     const data = req.body;
-    if(data){
+    if(data.data){
         const studentDetails = Array.from(data.data.documents);
         //Extract Y23 data
         const requiredData = studentDetails.filter((data)=>{
@@ -71,6 +68,8 @@ app.get('/',async (req,res)=>{
     }
     
 });
+
+// Wing Endpoint
 app.get('/:wing',async (req,res)=>{
     try {
 
@@ -94,11 +93,17 @@ app.get('/:wing',async (req,res)=>{
         res.status(500).send({ "message": "error" });
     }
 });
+
+// WingiesOrNot Endpoint
 app.post('/WingiesOrNot',async (req,res)=>{
     try {
 
         const studentOne = req.body.studentOne;
         const studentTwo = req.body.studentTwo;
+        if(!studentOne || !studentTwo){
+            res.send({'message' : 'Please provide RollNo in body'});
+            return;
+        }
         let studentDetails = await fs.readFile('data.json', 'utf8');
         studentDetails = JSON.parse(studentDetails);
 
